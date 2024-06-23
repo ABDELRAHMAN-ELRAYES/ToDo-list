@@ -1,0 +1,220 @@
+@import url(https://unpkg.com/fixedsys-css/css/fixedsys.css);
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  font-family: 'Poppins';
+  background-color: #dfefff;
+  color: #444;
+}
+:root {
+  btn-color: #6a93f8;
+  btn-light-color: #88abff;
+}
+
+.container {
+  background-color: #dfefff;
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  place-items: center;
+}
+.container h1 {
+  font-size: 4rem;
+}
+.content {
+  width: 75rem;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 9rem;
+}
+.task {
+  width: 18rem;
+  height: 18rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+.task .in-task {
+  display: grid;
+  place-items: center;
+}
+.icon {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 3px dashed #6a93f8;
+  display: grid;
+  place-items: center;
+}
+.icon i,
+.add-task h1 {
+  color: #6a93f8;
+  font-size: 3rem;
+  font-weight: 400;
+}
+.add-task h1 {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+.upper {
+  width: 100%;
+  height: 13rem;
+  border-bottom: 1px solid #96969665;
+}
+.down {
+  width: 100%;
+  height: 4.5rem;
+  display: grid;
+  position: relative;
+}
+.down .date {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  align-items: center;
+}
+.down .date i {
+  font-size: 1.2rem;
+}
+.is-done-btn {
+  background-color: #6a93f8;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  transition: 0.7s;
+}
+.is-done-btn:hover {
+  transform: translateY(0.6rem);
+}
+
+.task .title {
+  font-size: 2rem;
+}
+.task .description {
+  font-size: 1rem;
+  color: #727272;
+  letter-spacing: 0.5px;
+}
+.options {
+  position: absolute;
+  width: 8rem;
+  height: 5.5rem;
+  display: grid;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  right: -5%;
+  top: 5%;
+  background-color: white;
+}
+.options div {
+  padding-left: 0.5rem;
+}
+.options div:hover {
+  background-color: #dedede;
+}
+.options div i {
+  margin-right: 0.75rem;
+}
+.hidden {
+  display: none;
+}
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #a3b7e999;
+}
+.modal-window {
+  position: absolute;
+  height: 27rem;
+  width: 23rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: white;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #96969665;
+  margin-bottom: 0.5rem;
+}
+.header i {
+  font-size: 1.3rem;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 22rem;
+}
+.modal-content label {
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.modal-content input {
+  height: 2.75rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #727272;
+  outline: none;
+}
+.modal-content textarea {
+  height: 10rem;
+  margin-bottom: 2rem;
+  resize: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #727272;
+  outline: none;
+}
+.modal-content input:focus {
+  background-color: #c0c8de38;
+  border: none;
+}
+.modal-content textarea:focus {
+  background-color: #c0c8de38;
+  border: none;
+}
+.modal-content button {
+  height: 3rem;
+  background-color: #6a93f8;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 800;
+  transition: 0.7s;
+}
+.modal-content button:hover {
+  transform: translateY(0.5rem);
+}
+@media (max-width: 950px) {
+  .content {
+    width: 42rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 450px) {
+  .content {
+    width: 22rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .modal-window {
+    width: 18rem;
+    left: 50%;
+    transform: translateX(-56%);
+  }
+}
