@@ -92,6 +92,8 @@ body {
   color: white;
   border-radius: 8px;
   transition: 0.7s;
+  font-size: 17px;
+  font-weight: 800;
 }
 .is-done-btn:hover {
   transform: translateY(0.6rem);

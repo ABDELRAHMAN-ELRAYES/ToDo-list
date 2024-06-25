@@ -13,7 +13,7 @@
     <div class="container">
       <h1>ToDo List</h1>
       <h2>Hi, <span class="user-name">Abdelrahman</span></h2>
-      <div class="content">
+      <div class="content" id="content">
         <div class="add-task task">
           <div class="in-task">
             <div class="icon">
@@ -22,81 +22,21 @@
             <h1>Add New Task!.</h1>
           </div>
         </div>
-        <div class="task">
-          <div class="upper">
-            <h1 class="title">Task one</h1>
-            <h2 class="description">
-              this task must be achieved today because it is so important than
-              you think.
-            </h2>
-          </div>
-          <div class="down">
-            <div class="date">
-              <p>December 21,2003</p>
-              <i class="fa-solid fa-ellipsis show-options-btn options-1"></i>
-            </div>
-            <button class="is-done-btn">Done</button>
-            <div class="options hidden options-1">
-              <div class="btn update-btn">
-                <i class="fa-solid fa-pen-to-square"></i>
-                Update
-              </div>
-              <div class="btn delete-btn">
-                <i class="fa-solid fa-trash"></i>
-                Delete
-              </div>
-              <div class="btn not-done-btn">
-                <i class="fa-solid fa-xmark"></i>
-                unDone
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="task">
-          <div class="upper">
-            <h1 class="title">Task Two</h1>
-            <h2 class="description">
-              this task must be achieved today because it is so important than
-              you think.
-            </h2>
-          </div>
-          <div class="down">
-            <div class="date">
-              <p>December 21,2003</p>
-              <i class="fa-solid fa-ellipsis show-options-btn options-2"></i>
-            </div>
-            <button class="is-done-btn">Done</button>
-            <div class="options hidden options-2">
-              <div class="btn update-btn">
-                <i class="fa-solid fa-pen-to-square"></i>
-                Update
-              </div>
-              <div class="btn delete-btn">
-                <i class="fa-solid fa-trash"></i>
-                Delete
-              </div>
-              <div class="btn not-done-btn">
-                <i class="fa-solid fa-xmark"></i>
-                unDone
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="overlay hidden"></div>
-      <form class="modal-window hidden">
+      <div class="modal-window hidden">
         <div class="header">
           <h2>Add a new task</h2>
           <i class="fa-solid fa-xmark close-modal"></i>
         </div>
-        <div class="modal-content">
+        <form class="modal-content">
           <label for="task-name">Title</label>
           <input type="text" name="task-name" class="task-name" />
           <label for="task-description">Description</label>
           <textarea name="task-description" class="task-description"></textarea>
-          <button class="add-task-btn">Add Task</button>
-        </div>
-      </form>
+          <button class="add-task-btn add-new-task">Add Task</button>
+        </form>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>
