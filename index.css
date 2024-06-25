@@ -156,7 +156,7 @@ body {
 .modal-content {
   display: flex;
   flex-direction: column;
-  height: 22rem;
+  height: 24rem;
 }
 .modal-content label {
   font-size: 1.25rem;

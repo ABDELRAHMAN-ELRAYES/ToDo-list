@@ -119,6 +119,15 @@ document.getElementById('content').addEventListener('click', event => {
 });
 document.getElementById('content').addEventListener('click', event => {
   if (event.target.classList.contains('not-done-btn')) {
-    console.log('hello from not done btn btn');
+    let curTask = event.target.parentNode.parentNode.parentNode;
+    curTask.style.backgroundColor = 'white';
+    curTask.querySelector('.title').style.textDecoration = 'none';
+  }
+});
+document.getElementById('content').addEventListener('click', event => {
+  if (event.target.classList.contains('is-done-btn')) {
+    let curTask = event.target.parentNode.parentNode;
+    curTask.style.backgroundColor = '#a1caff';
+    curTask.querySelector('.title').style.textDecoration = 'line-through';
   }
 });
