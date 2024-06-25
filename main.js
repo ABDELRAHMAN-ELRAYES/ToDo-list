@@ -1,7 +1,7 @@
 'use strict';
 let addTaskBtn = document.querySelector('.icon');
-let showOptionsBtn = document.querySelector('.show-options-btn');
-let options = document.querySelector('.options');
+let showOptionsBtn = document.querySelectorAll('.show-options-btn');
+let options = document.querySelectorAll('.options');
 let closeModalBtn = document.querySelector('.close-modal');
 let modalWindow = document.querySelector('.modal-window');
 let overlay = document.querySelector('.overlay');
@@ -10,16 +10,6 @@ let taskDescription = document.querySelector('.task-description');
 let addTaskForm = document.querySelector('.add-task-btn');
 let content = document.querySelector('.content');
 
-showOptionsBtn.addEventListener('click', event => {
-  if (options.classList.contains('hidden')) {
-    options.classList.remove('hidden');
-  }
-});
-document.addEventListener('click', event => {
-  if (event.target !== showOptionsBtn) {
-    options.classList.add('hidden');
-  }
-});
 let closeModal = () => {
   modalWindow.classList.add('hidden');
   overlay.classList.add('hidden');
@@ -38,7 +28,24 @@ document.addEventListener('keydown', event => {
 addTaskBtn.addEventListener('click', () => {
   viewModal();
 });
-let cardCounter = 2;
+showOptionsBtn.forEach(btn => {
+  console.log(btn);
+  btn.addEventListener('click', event => {
+    let optionsClass = event.target.classList[3];
+    options.forEach(opt => {
+      if (opt.classList.contains(optionsClass)) {
+        opt.classList.remove('hidden');
+      }
+    });
+  });
+});
+
+document.addEventListener('click', event => {
+  if (Array.from(showOptionsBtn).every(btn => btn !== event.target)) {
+    options.forEach(opt => opt.classList.add('hidden'));
+  }
+});
+let cardCounter = 1;
 addTaskForm.addEventListener('click', event => {
   event.preventDefault();
   let taskCardTitle = taskName.value;
@@ -52,7 +59,7 @@ addTaskForm.addEventListener('click', event => {
           <div class="down">
             <div class="date">
               <p>December 21,2003</p>
-              <i class="fa-solid fa-ellipsis show-options-btn"></i>
+              <i class="fa-solid fa-ellipsis show-options-btn options-${cardCounter}"></i>
             </div>
             <button class="is-done-btn">Done</button>
             <div class="options hidden options-${cardCounter}">
@@ -71,6 +78,7 @@ addTaskForm.addEventListener('click', event => {
             </div>
           </div>
         </div>`;
+  cardCounter++;
   if (taskCardTitle !== '' && taskCardDescription !== '') {
     content.insertAdjacentHTML('beforeEnd', taskCard);
     taskDescription.value = '';
