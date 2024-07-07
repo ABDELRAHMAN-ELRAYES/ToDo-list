@@ -46,6 +46,14 @@ document.addEventListener('click', event => {
 });
 let cardCounter = 1;
 let addNewTask = function (taskCardTitle, taskCardDescription) {
+  let options = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+  };
+  let taskDate = new Intl.DateTimeFormat('en-UK', options).format(new Date());
   let taskCard = `<div class="task">
       <div class="upper">
         <h1 class="title">${taskCardTitle}</h1>
@@ -53,7 +61,7 @@ let addNewTask = function (taskCardTitle, taskCardDescription) {
       </div>
       <div class="down">
         <div class="date">
-          <p>December 21,2003</p>
+          <p>${taskDate}</p>
           <i class="fa-solid fa-ellipsis show-options-btn options-${cardCounter}"></i>
         </div>
         <button class="is-done-btn">Done</button>
